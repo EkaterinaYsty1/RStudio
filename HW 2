@@ -1,0 +1,15 @@
+library(tidyverse)
+library(readxl)
+HW <- read_excel("C:/Users/alexp/OneDrive/Рабочий стол/HW.xlsx", 
+     col_types = c("text", "numeric", "numeric", 
+         "numeric", "numeric"))
+ggplot( data = HW,
+        aes(H,W, color = Gender)) +
+    geom_point(size = 0.2) +
+    labs(x= "Height", 
+         y = "Weight",
+         title = "The relationship between height and weight in the population") +
+    theme_bw() +
+    theme(legend.position = "bottom",
+          legend.title = element_text(vjust = .9),
+          plot.title = element_text(hjust = .5))
